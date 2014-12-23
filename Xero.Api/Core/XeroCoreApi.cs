@@ -4,6 +4,7 @@ using Xero.Api.Common;
 using Xero.Api.Core.Endpoints;
 using Xero.Api.Core.Model;
 using Xero.Api.Core.Model.Setup;
+using Xero.Api.Core.Response;
 using Xero.Api.Infrastructure.Interfaces;
 using Xero.Api.Serialization;
 using Organisation = Xero.Api.Core.Model.Organisation;
@@ -63,7 +64,7 @@ namespace Xero.Api.Core
         public TaxRatesEndpoint TaxRates { get; private set; }
         public TrackingCategoriesEndpoint TrackingCategories { get; private set; }
         public UsersEndpoint Users { get; private set; }
-        
+        public FoldersEndpoint Folders { get; private set; }
 
         private void Connect()
         {
@@ -94,6 +95,7 @@ namespace Xero.Api.Core
             TaxRates = new TaxRatesEndpoint(Client);
             TrackingCategories = new TrackingCategoriesEndpoint(Client);
             Users = new UsersEndpoint(Client);
+            Folders = new FoldersEndpoint(Client);
         }
 
         public Organisation Organisation
@@ -304,5 +306,9 @@ namespace Xero.Api.Core
             return Setup.Update(item);
         }
 
-      }
+        public FolderResponse Create(Folder item)
+        {
+            return Folders.Create(item);
+        }
+    }
 }

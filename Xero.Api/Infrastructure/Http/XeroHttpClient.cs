@@ -101,6 +101,24 @@ namespace Xero.Api.Infrastructure.Http
             return null;
         }
 
+        public TResponse PostOne<TResponse>(string endPoint, object data)            
+        {
+            return ReadOne<TResponse>(Client.Post(endPoint, XmlMapper.To(data), query: new QueryGenerator(null, null, Parameters).UrlEncodedQueryString));
+        }
+
+        internal TResponse ReadOne<TResponse>(Response response)         
+        {
+            // this is the 'happy path'
+            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Created)
+            {
+                return JsonMapper.From<TResponse>(response.Body);
+            }
+
+            HandleErrors(response);
+
+            return default(TResponse);
+        }
+
         internal void HandleErrors(Response response)
         {
             if (response.StatusCode == HttpStatusCode.BadRequest)
