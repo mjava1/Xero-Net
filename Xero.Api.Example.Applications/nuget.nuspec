@@ -3,14 +3,14 @@
   <metadata>
     <id>XeroApi.NetLibrary</id>
     <version>$version$</version>
-    <title>XeroApi .Net Library</title>
+    <title>Xero Api Applications .Net Library</title>
     <authors>Xero</authors>
     <owners>Xero</owners>
     <licenseUrl>https://github.com/XeroAPI/XeroAPI.Net</licenseUrl>
     <projectUrl>https://github.com/XeroAPI/XeroAPI.Net</projectUrl>
     <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>This is a .Net wrapper library, written in C#, used to comnunicate with the Xero Core API </description>
+    <description>This is a .Net wrapper library, written in C#, used to communicate with the Xero Core API </description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright &#x00A9; Xero.  All rights reserved.</copyright>
     <tags>xero api</tags>
