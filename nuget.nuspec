@@ -16,4 +16,9 @@
     <tags>xero api</tags>
   </metadata>
 
+  <files>
+    <file src="Xero.Api\bin\Release\Xero.Api.dll" target="lib\net40" />
+	<file src="Xero.Api\bin\Release\Xero.Api.pdb" target="lib\net40" />
+  </files>
+
 </package>
