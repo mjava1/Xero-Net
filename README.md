@@ -173,6 +173,16 @@ The examples are
 
 All communication with the [Xero API](http://deverloper.xero.com) is compressed at source. Writing to the API is done with XML. The data model classes have be attributed to give a small XML payload. All communication back from the API is JSON. These details are transparent to the user of the class library.
 
+Installation
+------------
+There are 2 ways to install this library:
+
+1. Download the source code from github and compile yourself:
+ **https://github.com/XeroAPI/Xero-Net**
+
+2. Download directly into Visual Studio using the NuGet powershell command:
+ **PM&gt; Install-Package Xero.API.SDK**
+ 
 ##Acknowledgements
 Thanks for the following Open Source libraries for making the wrapper and samples easier
 
