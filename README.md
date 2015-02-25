@@ -2,6 +2,7 @@
 ========
 A skinny wrapper of the Xero API. Supports Payroll. All third party libraries are included as source code.
 
+* [Installation] (#installation)
 * [What is supported?] (#what-is-supported)
 * [Things to note] (#things-to-note)
 * [Samples] (#samples)
@@ -10,8 +11,16 @@ A skinny wrapper of the Xero API. Supports Payroll. All third party libraries ar
 * [Authenticators] (#authenticators)
 * [Token Stores] (#token-stores)
 * [Serialization] (#serialization)
+* [Usage] (#usage)
 * [Acknowledgements] (#acknowledgements)
 * [License] (#license)
+
+## Installation
+
+There are 2 ways to install this library:
+
+1. Download the source code from github and compile yourself: **https://github.com/XeroAPI/Xero-Net**
+2. Download directly into Visual Studio using the NuGet powershell command: **PM&gt; Install-Package Xero.API.SDK**
 
 ## What is supported?
 ### Core
@@ -65,7 +74,7 @@ A skinny wrapper of the Xero API. Supports Payroll. All third party libraries ar
 * Invoices and Contacts support pagination. In the RESTful API these are off by default. For the wrapper, they are always on and default to page 1. See the Counts or Creation code examples for how to use the Page method to get all items.
 * Contacts support including archived contacts. Like the RESTful API, this if off by default. Use IncluceArchived(true) to include them.
 * Four decimal places are supported and are always on.
-* You will need an instance of the API per user. The user is stored as part of the API instance.
+* You will need an instance of the API per organisation / connection. The connection is stored as part of the API instance.
 
 ## Samples
 There are samples for each of the API endpoints. These have been done as console application and also a collection of NUnit tests. See the README for each of the executable and test assemblies.
@@ -173,18 +182,7 @@ The examples are
 
 All communication with the [Xero API](http://deverloper.xero.com) is compressed at source. Writing to the API is done with XML. The data model classes have be attributed to give a small XML payload. All communication back from the API is JSON. These details are transparent to the user of the class library.
 
-Installation
-------------
-There are 2 ways to install this library:
-
-1. Download the source code from github and compile yourself:
- **https://github.com/XeroAPI/Xero-Net**
-
-2. Download directly into Visual Studio using the NuGet powershell command:
- **PM&gt; Install-Package Xero.API.SDK**
- 
-Usage
------
+##Usage
 To get going quickly:
 
 1. Follow this getting started guide: http://developer.xero.com/documentation/getting-started/getting-started-guide/
@@ -222,7 +220,7 @@ are for development only.
 				
 			var partner_contacts = partner_app_api.Contacts.Find().ToList();			
         }
-		
+
 ##Acknowledgements
 Thanks for the following Open Source libraries for making the wrapper and samples easier
 
